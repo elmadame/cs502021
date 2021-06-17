@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-weight:200;
+  background-color:white;
+}
+
+h4{
+  font-weight:400;
+  font-size:18px;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: white;
+  color: black;
+  text-align:center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0px 0px;
+  font-size: 16px;
+  width: 20%;
+  margin-left: 2.5%;
+  margin-right: 1.5%;
+}
+
+.tablink:hover {
+  background-color: #E0E0E0;
+  border-color:black;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: black;
+  display: none;
+  padding: 20px 10px;
+  height: 50%;
+  width: 90%;
+  margin-left:5%;
+}
+
+.tooltip {
+  position: relative;
+  display: inline;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: #14213D;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: -20%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0.2;
+  transition: opacity 0.7s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #14213D transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 0.85;
+}
+
+
+table {
+  width:100%;
+}
+
+table, th {
+  border-collapse: collapse;
+  border-spacing: 0px;
+  padding: 0 10px;
+  border-radius: 0px;
+  border: 0px solid #00857C;
+}
+
+#t01 td {
+  padding: 20px 10px 20px 10px;
+  text-align: center;
+  font-size:18px;
+  font-weight:200;
+  border-radius: 0px;
+  border: 0px solid #00857C;
+  width: 25%
+}
+
+#t01 tr {
+ padding: 0 10px;
+}
+
+#t01 th {
+  background-color: #00857C;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  font-weight:400;
+  padding: 0 10px;
+}
+
+.button {
+  background-color:white; 
+  border: none;
+  color: black;
+  padding: 15px;
+  text-align: center;
+  vertical-align: text-bottom;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight:400;
+  margin: 20px 20px;
+  cursor: pointer;
+  width:45%;
+}
+
+.button:hover {
+  background-color: #0C2340;
+  color: white;
+}
+.button4 {border-radius: 15px;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 0px solid #f7f7f7;
+  background-color: white;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: white;
+  float: right;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 16px 22px;
+  transition: 0.5s;
+  font-size: 16px;
+  border-radius:5px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ccc;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #0C2340;
+  color:white;
+}
+
+/* Style the tab content */
+.tabcontent1 {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #f7f7f7;
+  border-top: none;
+  background-color:#00857C
+}
+
+/* Style the close button */
+.topright {
+  float: right;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+.topright:hover {color: red;}
+
+</style>
+</head>
+
+<body>
+
+<button class="tablink" onclick="openPage('Attract', this, '#f7f7f7')"><img src="https://collaboration.merck.com/:i:/r/sites/SoFPortal/Shared%20Documents/Background/photo-1522202176988-66273c2fd55f.jfif?csf=1&web=1&e=UYLnYn" alt="Italian Trulli" width=100%; height=100%></i><h4>Attract & Unleash Diverse Teams<br><br></h4></button>
+
+<button class="tablink" onclick="openPage('Disproportional', this, '#f7f7f7')"><img src="https://collaboration.merck.com/:i:/r/sites/SoFPortal/Shared%20Documents/Background/photo-1559526324-593bc073d938.jfif?csf=1&web=1&e=SbZSHL" alt="Italian Trulli" width=100%; height=100%></i><h4>Disproportionally Invest Where It Counts</h4></button>
+
+<button class="tablink" onclick="openPage('Innovate', this, '#f7f7f7')"><img src="https://collaboration.merck.com/:i:/r/sites/SoFPortal/Shared%20Documents/Background/photo-1512758017271-d7b84c2113f1.jfif?csf=1&web=1&e=3zT9CC" alt="Italian Trulli" width=100%; height=100%></i><h4>Innovate New Commercial Strategies <br><br></h4></button>
+
+<button class="tablink" onclick="openPage('Realize', this, '#f7f7f7')"><img src="https://collaboration.merck.com/:i:/r/sites/SoFPortal/Shared%20Documents/Background/HCP-patients-medical-team-meeting_hi_300dpi.jpg?csf=1&web=1&e=dUgR5e" width=100%; height=100%></i><h4>Realize The Most Effective & Efficient GTM</h4></button>
+<br>
+
+
+<div id="Attract" class="tabcontent">
+  <div class="tab">
+  <h1 style="text-align:left; color:#0C2340; font-size:28px; margin-left:0%; font-weight:500;">Attract & Unleash Diverse Teams</h1>
+  <button class="tablinks" onclick="openCity(event, 'Leadership')" id="defaultOpen">Leadership</button>
+  <button class="tablinks" onclick="openCity(event, 'D&I')">D&I</button>
+  <button class="tablinks" onclick="openCity(event, 'WoW')">WoW</button>
+  <button class="tablinks" onclick="openCity(event, 'Agile')">Agile</button>
+  </div>
+  
+  <div id="Leadership" class="tabcontent1">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h2></h2>
+  <p></p>
+  <table id="t01">
+  <tr>
+    <th><img src="https://image.flaticon.com/icons/png/512/4901/4901774.png" width="20%" title="Iframe Example">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+    <th><img src="https://image.flaticon.com/icons/png/512/841/841361.png" width="20%" title="SoF Compass">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+  </tr>
+  <tr>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>SoF Compass</button></td>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>Initiatives, Resources and SME</button></td>
+  </tr>
+</table>
+  </div>
+
+  <div id="D&I" class="tabcontent1">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h2></h2>
+  <p></p>
+  <table id="t01">
+  <tr>
+    <th><img src="https://image.flaticon.com/icons/png/512/4901/4901774.png" width="20%" title="Iframe Example">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+    <th><img src="https://image.flaticon.com/icons/png/512/841/841361.png" width="20%" title="SoF Compass">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+  </tr>
+  <tr>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>SoF Compass</button></td>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>Initiatives, Resources and SME</button></td>
+  </tr>
+</table>
+  </div>
+
+  <div id="WoW" class="tabcontent1">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h2></h2>
+  <p></p>
+  <table id="t01">
+  <tr>
+    <th><img src="https://image.flaticon.com/icons/png/512/4901/4901774.png" width="20%" title="Iframe Example">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+    <th><img src="https://image.flaticon.com/icons/png/512/841/841361.png" width="20%" title="SoF Compass">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+  </tr>
+  <tr>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>SoF Compass</button></td>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>Initiatives, Resources and SME</button></td>
+  </tr>
+</table>
+  </div>
+  
+  <div id="Agile" class="tabcontent1">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h2></h2>
+  <p></p>
+  <table id="t01">
+  <tr>
+    <th><img src="https://image.flaticon.com/icons/png/512/4901/4901774.png" width="20%" title="Iframe Example">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+    <th><img src="https://image.flaticon.com/icons/png/512/841/841361.png" width="20%" title="SoF Compass">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+  </tr>
+  <tr>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>SoF Compass</button></td>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>Initiatives, Resources and SME</button></td>
+  </tr>
+</table>
+  </div>
+</p>
+</div>
+
+
+
+
+
+
+<div id="Disproportional" class="tabcontent">
+  <div class="tab">
+  <h1 style="text-align:left; color:#0C2340; font-size:28px; margin-left:0%; font-weight:500;">Disproportionally Invest Where It Counts</h1>
+  <button class="tablinks" onclick="openCity(event, 'HH')" id="defaultOpen">HH Data & Analytics</button>
+  <button class="tablinks" onclick="openCity(event, 'Demand')">Demand & Financial Planning</button>
+  <button class="tablinks" onclick="openCity(event, 'Process')">Process Automation
+</button>
+  </div>
+  
+  <div id="HH" class="tabcontent1">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h2></h2>
+  <p></p>
+  <table id="t01">
+  <tr>
+    <th><img src="https://image.flaticon.com/icons/png/512/4901/4901774.png" width="20%" title="Iframe Example">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+    <th><img src="https://image.flaticon.com/icons/png/512/841/841361.png" width="20%" title="SoF Compass">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+  </tr>
+  <tr>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>SoF Compass</button></td>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>Initiatives, Resources and SME</button></td>
+  </tr>
+</table>
+  </div>
+
+  <div id="Demand" class="tabcontent1">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h2></h2>
+  <p></p>
+  <table id="t01">
+  <tr>
+    <th><img src="https://image.flaticon.com/icons/png/512/4901/4901774.png" width="20%" title="Iframe Example">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+    <th><img src="https://image.flaticon.com/icons/png/512/841/841361.png" width="20%" title="SoF Compass">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+  </tr>
+  <tr>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>SoF Compass</button></td>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>Initiatives, Resources and SME</button></td>
+  </tr>
+</table>
+  </div>
+
+  <div id="Process" class="tabcontent1">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h2></h2>
+  <p></p>
+  <table id="t01">
+  <tr>
+    <th><img src="https://image.flaticon.com/icons/png/512/4901/4901774.png" width="20%" title="Iframe Example">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+    <th><img src="https://image.flaticon.com/icons/png/512/841/841361.png" width="20%" title="SoF Compass">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+  </tr>
+  <tr>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>SoF Compass</button></td>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>Initiatives, Resources and SME</button></td>
+  </tr>
+</table>
+  </div>
+</div>
+
+
+
+
+
+<div id="Innovate" class="tabcontent">
+  <div class="tab">
+  <h1 style="text-align:left; color:#0C2340; font-size:28px; margin-left:0%; font-weight:500;">Innovate New Commercial Strategies</h1>
+  <button class="tablinks" onclick="openCity(event, 'Policy')" id="defaultOpen3">Policy & Communications</button>
+  <button class="tablinks" onclick="openCity(event, 'Market')">Market Access</button>
+  <button class="tablinks" onclick="openCity(event, 'CORE')">CORE (HEOR/RWE)</button>
+  <button class="tablinks" onclick="openCity(event, 'KAM')">Key Account Management (KAM)</button>
+  <button class="tablinks" onclick="openCity(event, 'Ecosystem')">Strategic Ecosystem Partnerships</button>
+  </div>
+  
+  <div id="Policy" class="tabcontent1">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h2></h2>
+  <p></p>
+  <table id="t01">
+  <tr>
+    <th><img src="https://image.flaticon.com/icons/png/512/4901/4901774.png" width="20%" title="Iframe Example">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+    <th><img src="https://image.flaticon.com/icons/png/512/841/841361.png" width="20%" title="SoF Compass">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+  </tr>
+  <tr>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>SoF Compass</button></td>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>Initiatives, Resources and SME</button></td>
+  </tr>
+  </table>
+  </div>
+
+  <div id="Market" class="tabcontent1">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h2></h2>
+  <p></p>
+  <table id="t01">
+  <tr>
+    <th><img src="https://image.flaticon.com/icons/png/512/4901/4901774.png" width="20%" title="Iframe Example">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+    <th><img src="https://image.flaticon.com/icons/png/512/841/841361.png" width="20%" title="SoF Compass">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+  </tr>
+  <tr>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>SoF Compass</button></td>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>Initiatives, Resources and SME</button></td>
+  </tr>
+  </table>
+  </div>
+
+  <div id="CORE" class="tabcontent1">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h2></h2>
+  <p></p>
+  <table id="t01">
+  <tr>
+    <th><img src="https://image.flaticon.com/icons/png/512/4901/4901774.png" width="20%" title="Iframe Example">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+    <th><img src="https://image.flaticon.com/icons/png/512/841/841361.png" width="20%" title="SoF Compass">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+  </tr>
+  <tr>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>SoF Compass</button></td>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>Initiatives, Resources and SME</button></td>
+  </tr>
+</table>
+  </div>
+  
+  <div id="KAM" class="tabcontent1">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h2></h2>
+  <p></p>
+  <table id="t01">
+  <tr>
+    <th><img src="https://image.flaticon.com/icons/png/512/4901/4901774.png" width="20%" title="Iframe Example">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+    <th><img src="https://image.flaticon.com/icons/png/512/841/841361.png" width="20%" title="SoF Compass">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+  </tr>
+  <tr>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>SoF Compass</button></td>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>Initiatives, Resources and SME</button></td>
+  </tr>
+</table>
+  </div>
+  
+    <div id="Ecosystem" class="tabcontent1">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h2></h2>
+  <p></p>
+  <table id="t01">
+  <tr>
+    <th><img src="https://image.flaticon.com/icons/png/512/4901/4901774.png" width="20%" title="Iframe Example">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+    <th><img src="https://image.flaticon.com/icons/png/512/841/841361.png" width="20%" title="SoF Compass">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+  </tr>
+  <tr>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>SoF Compass</button></td>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>Initiatives, Resources and SME</button></td>
+  </tr>
+</table>
+  </div>
+</div>
+
+
+
+
+
+<div id="Realize" class="tabcontent">
+  <div class="tab">
+  <h1 style="text-align:left; color:#0C2340; font-size:28px; margin-left:0%; font-weight:500;">Realize The Most Effective & Efficient GTM</h1>
+  <button class="tablinks" onclick="openCity(event, 'Brand')" id="defaultOpen4">Brand Management</button>
+  <button class="tablinks" onclick="openCity(event, 'Content')">Content Management</button>
+  <button class="tablinks" onclick="openCity(event, 'CTC')">Commercial Trade Channel (CTC)</button>
+  <button class="tablinks" onclick="openCity(event, 'F2F')">F2F HCP Engagement (commercial)</button>
+  </div>
+  
+  <div id="Brand" class="tabcontent1">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h2></h2>
+  <p></p>
+  <table id="t01">
+  <tr>
+    <th><img src="https://image.flaticon.com/icons/png/512/4901/4901774.png" width="20%" title="Iframe Example">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+    <th><img src="https://image.flaticon.com/icons/png/512/841/841361.png" width="20%" title="SoF Compass">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+  </tr>
+  <tr>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>SoF Compass</button></td>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>Initiatives, Resources and SME</button></td>
+  </tr>
+</table>
+  </div>
+
+  <div id="Content" class="tabcontent1">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h2></h2>
+  <p></p>
+  <table id="t01">
+  <tr>
+    <th><img src="https://image.flaticon.com/icons/png/512/4901/4901774.png" width="20%" title="Iframe Example">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+    <th><img src="https://image.flaticon.com/icons/png/512/841/841361.png" width="20%" title="SoF Compass">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+  </tr>
+  <tr>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>SoF Compass</button></td>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>Initiatives, Resources and SME</button></td>
+  </tr>
+</table>
+  </div>
+
+  <div id="CTC" class="tabcontent1">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h2></h2>
+  <p></p>
+  <table id="t01">
+  <tr>
+    <th><img src="https://image.flaticon.com/icons/png/512/4901/4901774.png" width="20%" title="Iframe Example">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+    <th><img src="https://image.flaticon.com/icons/png/512/841/841361.png" width="20%" title="SoF Compass">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+  </tr>
+  <tr>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>SoF Compass</button></td>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>Initiatives, Resources and SME</button></td>
+  </tr>
+</table>
+  </div>
+  
+  <div id="F2F" class="tabcontent1">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h2></h2>
+  <p></p>
+  <table id="t01">
+  <tr>
+    <th><img src="https://image.flaticon.com/icons/png/512/4901/4901774.png" width="20%" title="Iframe Example">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+    <th><img src="https://image.flaticon.com/icons/png/512/841/841361.png" width="20%" title="SoF Compass">
+<a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a></i></th>
+  </tr>
+  <tr>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>SoF Compass</button></td>
+    <td><button class="button button4"><a href='https://collaboration.merck.com/:x:/r/sites/SoFPortal/Shared%20Documents/Global%20Initiatives/Initiatives,%20Resources%20and%20SMEs.xlsx?d=wfdec563f09214116927d28c4306053bb&csf=1&web=1&e=NXBh4b' target="_blank"></a>Initiatives, Resources and SME</button></td>
+  </tr>
+</table>
+  </div>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+</script>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent1");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+document.getElementById("defaultOpen2").click();
+document.getElementById("defaultOpen3").click();
+document.getElementById("defaultOpen4").click();
+
+</script>
+
+</body>
+</html> 
